@@ -9,6 +9,7 @@ body {
 
 .headerCol {
     font-size: 40px;
+    font-weight: bold;
 }
 
 .obiWan,
@@ -17,9 +18,29 @@ body {
 .darthM {
     background-color: white;
     border: 2px solid green;
+    position: relative;
+}
+
+.characterRow,
+.attackRow,
+.fightRow,
+.defenderRow {
+    font-size: 22px;
+    font-weight: bold;
 }
 
 .characterRow {
-    font-size: 30px;
     height: 200px;
+}
+
+.imageText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.characterBox {
+    display: inline-block;
+    position: relative;
 }
