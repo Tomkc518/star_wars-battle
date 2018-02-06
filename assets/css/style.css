@@ -1,0 +1,25 @@
+body {
+    font-family: 'Overpass Mono', monospace;
+}
+
+.mainBody {
+    background-image: url(../images/x_wing_background.jpg);
+    height: 800px;
+}
+
+.headerCol {
+    font-size: 40px;
+}
+
+.obiWan,
+.luke,
+.darthSid,
+.darthM {
+    background-color: white;
+    border: 2px solid green;
+}
+
+.characterRow {
+    font-size: 30px;
+    height: 200px;
+}
