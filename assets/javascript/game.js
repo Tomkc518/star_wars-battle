@@ -1,22 +1,32 @@
 $(function() {
+    var characterSelected = true;
+    var enemySelected = true;
     // When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
     $(".characterBox").on("click", function() {
-        var playerClicked = $(this);
-        console.log(playerClicked);
-        $(".characterRow").append($(this));
-        // The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
-        $(".characterBox").each(function() {
-            if ($(this) !== playerClicked) {
+        if (characterSelected) {
+            $(".characterRow").append($(this));
+            $(this).removeClass("characterBox")
+            characterSelected = false;
+            // The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
+            $(".characterBox").each(function() {
                 $(".attackRow").append($(this));
-            }
-        });
+                $(this).addClass("enemiesToAttack");
+            });
+        };
+    });
+    // The player chooses an opponent by clicking on an enemy's picture.
+    $(document).on('click', ".enemiesToAttack", function() {
+        if (enemySelected) {
+            $(".defenderRow").append($(this));
+            enemySelected = false;      
+        };
     });
 });
 
 
 
 
-// The player chooses an opponent by clicking on an enemy's picture.
+
 
 // Once the player selects an opponent, that enemy is moved to a defender area.
 

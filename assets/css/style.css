@@ -49,7 +49,10 @@ body {
     width: 100%;
 }
 
-.characterBox {
+.obiBox,
+.lukeBox,
+.sidBox,
+.maulBox {
     display: inline-block;
     position: relative;
 }
