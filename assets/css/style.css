@@ -16,8 +16,7 @@ body {
 .luke,
 .darthSid,
 .darthM {
-    background-color: white;
-    border: 2px solid green;
+    
     position: relative;
 }
 
@@ -42,7 +41,7 @@ body {
 }
 
 .imageTextBottom {
-    bottom: -2.5%;
+    bottom: -5%;
     font-size: 16px;
     font-weight: 400;
     position: absolute;
@@ -53,6 +52,8 @@ body {
 .lukeBox,
 .sidBox,
 .maulBox {
+    background-color: white;
     display: inline-block;
     position: relative;
+    border: 2px solid green;
 }

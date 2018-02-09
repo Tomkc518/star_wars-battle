@@ -1,16 +1,42 @@
 $(function() {
     var characterSelected = true;
     var enemySelected = true;
+    
+
+    var obiWan = {
+        health: 120,
+        attack: 10,
+        counterAttack: 15,
+    };
+    var luke = {
+        health: 100,
+        attack: 8,
+        counterAttack: 12,
+    };
+    var darthSid = {
+        health: 150,
+        attack: 10,
+        counterAttack: 20,
+    };
+    var darthMaul = {
+        health: 180,
+        attack: 12,
+        counterAttack: 25,
+    };
+
+    
     // When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
     $(".characterBox").on("click", function() {
         if (characterSelected) {
             $(".characterRow").append($(this));
             $(this).removeClass("characterBox")
+            
             characterSelected = false;
             // The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
             $(".characterBox").each(function() {
                 $(".attackRow").append($(this));
                 $(this).addClass("enemiesToAttack");
+                $(this).css({"background-color": "red", "border": "1px solid black"});
             });
         };
     });
@@ -18,7 +44,15 @@ $(function() {
     $(document).on('click', ".enemiesToAttack", function() {
         if (enemySelected) {
             $(".defenderRow").append($(this));
+            $(this).css({"background-color": "black", "border": "1px solid green", "color": "white"});
+            
             enemySelected = false;      
+        };
+    });
+    
+    $(".attackButton").on("click", function() {
+        if (characterSelected === false && enemySelected === false) {
+
         };
     });
 });
