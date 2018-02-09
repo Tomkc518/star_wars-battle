@@ -30,13 +30,22 @@ body {
 }
 
 .characterRow {
-    height: 200px;
+    height: 175px;
 }
 
-.imageText {
+.imageTextTop {
+    font-size: 16px;
+    font-weight: 400;
     position: absolute;
     top: 0;
-    left: 0;
+    width: 100%;
+}
+
+.imageTextBottom {
+    bottom: -2.5%;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
     width: 100%;
 }
 
