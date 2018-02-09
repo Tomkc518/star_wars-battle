@@ -1,8 +1,6 @@
 $(function() {
     var characterSelected = true;
     var enemySelected = true;
-    
-
     var obiWan = {
         health: 120,
         attack: 10,
@@ -30,7 +28,6 @@ $(function() {
         if (characterSelected) {
             $(".characterRow").append($(this));
             $(this).removeClass("characterBox")
-            
             characterSelected = false;
             // The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
             $(".characterBox").each(function() {
@@ -42,33 +39,23 @@ $(function() {
     });
     // The player chooses an opponent by clicking on an enemy's picture.
     $(document).on('click', ".enemiesToAttack", function() {
+        // Once the player selects an opponent, that enemy is moved to a defender area.
         if (enemySelected) {
             $(".defenderRow").append($(this));
             $(this).css({"background-color": "black", "border": "1px solid green", "color": "white"});
-            
             enemySelected = false;      
         };
     });
-    
+    // The player will now be able to click the attack button.
     $(".attackButton").on("click", function() {
         if (characterSelected === false && enemySelected === false) {
+            // Whenever the player clicks attack, their character damages the defender. The opponent will lose HP (health points). These points are displayed at the bottom of the defender's picture.
 
+             // The opponent character will instantly counter the attack. When that happens, the player's character will lose some of their HP. These points are shown at the bottom of the player character's picture.
         };
     });
 });
 
-
-
-
-
-
-// Once the player selects an opponent, that enemy is moved to a defender area.
-
-// The player will now be able to click the attack button.
-
-    // Whenever the player clicks attack, their character damages the defender. The opponent will lose HP (health points). These points are displayed at the bottom of the defender's picture.
-
-    // The opponent character will instantly counter the attack. When that happens, the player's character will lose some of their HP. These points are shown at the bottom of the player character's picture.
 
 // The player will keep hitting the attack button in an effort to defeat their opponent.
 
