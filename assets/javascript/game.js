@@ -30,6 +30,7 @@ $(function() {
         attack: 12,
         counterAttack: 25,
     };
+
     var possibleCharacters = [obiWan, luke, darthSid, darthMaul];
     // When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
     $(".characterBox").on("click", function() {
@@ -38,7 +39,6 @@ $(function() {
             $(this).removeClass("characterBox")
             characterSelected = false;
             character = $(this).attr("id");
-            $(this).addClass("characterAttacking");
             // The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
             $(".characterBox").each(function() {
                 $(".attackRow").append($(this));
@@ -67,8 +67,6 @@ $(function() {
                         characterAttack = possibleCharacters[i].attack;
                         characterAttackIncrease = possibleCharacters[i].attack;
                         characterHealth = possibleCharacters[i].health;
-                        //console.log("Character attack: " + characterAttack);
-                        //console.log("Character health: " + characterHealth);
                         characterSet = false;
                     };
                 };
@@ -79,25 +77,18 @@ $(function() {
                     if (enemy === possibleCharacters[j].id) {
                         enemyAttack = possibleCharacters[j].attack;
                         enemyHealth = possibleCharacters[j].health;
-                        //console.log("enemy attack: " + enemyAttack);
-                        //console.log("enemy health: " + enemyHealth);
                         enemySet = false;
                     };
                 };
             };
-            console.log("Enemy Attack: " + enemyAttack);
+            
+            // The player will keep hitting the attack button in an effort to defeat their opponent.
             characterHealth -= enemyAttack;
-            console.log("Character health: " + characterHealth);
-            console.log("Character attack before :" + characterAttack);
             enemyHealth -= characterAttack;
-            console.log("Enemy Health: " + enemyHealth);
-            
             characterAttack += characterAttackIncrease;
-            console.log("Character attack after :" + characterAttack);
-
-            console.log("Character text: " + $(".characterAttacking.imagetextbottom"));
-            
-            $(".characterAttacking.imageTextBottom").text(characterHealth);
+                        
+            $("#" + character + "> .imageTextBottom").text(characterHealth);
+            $("#" + enemy + "> .imageTextBottom").text(enemyHealth);
         
             
         };
@@ -106,7 +97,7 @@ $(function() {
 });
 
 
-// The player will keep hitting the attack button in an effort to defeat their opponent.
+
 
 // When the defender's HP is reduced to zero or below, remove the enemy from the defender area. The player character can now choose a new opponent.
 
