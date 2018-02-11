@@ -4,7 +4,7 @@ body {
 
 .mainBody {
     background-image: url(../images/x_wing_background.jpg);
-    height: 850px;
+    height: 100%;
 }
 
 .headerCol {
