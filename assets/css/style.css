@@ -4,12 +4,16 @@ body {
 
 .mainBody {
     background-image: url(../images/x_wing_background.jpg);
-    height: 800px;
+    height: 850px;
 }
 
 .headerCol {
     font-size: 40px;
     font-weight: bold;
+}
+
+#instructions {
+    color: white;
 }
 
 .obiWan,
