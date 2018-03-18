@@ -12,4 +12,4 @@ Of those, you must choose in which order to defeat the enemies.
 
 Once all of them are defeated you win! Otherwise when your hp gets to <=0 you lose :(
 
-[Game](https://tomkc518.github.io/week-4-game/)
+[Game](https://tomkc518.github.io/star_wars-battle/)
